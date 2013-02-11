@@ -6,6 +6,10 @@ gem 'carrierwave'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'mysql2', '~> 0.3.11'
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
+gem 'rails3_before_render'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

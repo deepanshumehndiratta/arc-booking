@@ -14,3 +14,13 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
+# Ignore Sublime Project Files
+/quizzy-server.sublime-project
+/quizzy-server.sublime-workspace
+
+# Ignore uploads
+# /public/uploads/*
+
+# Ignore the default database.yml
+/db/database.yml

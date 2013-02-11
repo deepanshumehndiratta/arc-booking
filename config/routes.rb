@@ -1,4 +1,24 @@
 ArcBooking::Application.routes.draw do
+  resources :bookings
+
+
+  resources :users
+
+
+  resources :rooms
+
+
+  resources :wings
+
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+
+  match '/bookings/for/:wing/:room/begin/:time', :to => 'bookings#for', :via => [:get], :as => 'custom_booking'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
