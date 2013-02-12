@@ -12,6 +12,8 @@ gem 'twitter-bootstrap-rails'
 gem 'rails3_before_render'
 gem 'bootstrap_form'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

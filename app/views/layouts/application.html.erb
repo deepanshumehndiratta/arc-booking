@@ -59,6 +59,9 @@
                     <%= current_user.name %> <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
+                    <li>
+                      <%= link_to "My Bookings", my_bookings_path %>
+                    </li>
                     <li class="divider"></li>
                     <li>
                       <%= link_to "Sign out", signout_path, method: "delete" %>
@@ -91,6 +94,8 @@
         </div><!--/row-->
 
       <footer>
+        <br>
+        <br>
         <p>
           &copy; BITS Pilani, K. K. Birla Goa Campus
           <br>

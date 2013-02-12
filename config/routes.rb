@@ -1,4 +1,7 @@
 ArcBooking::Application.routes.draw do
+
+  root :to => 'bookings#index'
+
   resources :bookings, :except => [:show]
 
 
@@ -17,6 +20,7 @@ ArcBooking::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
 
   match '/bookings/for/:wing/:room/begin/:time', :to => 'bookings#for', :via => [:get], :as => 'custom_booking'
+  match '/mybookings',  to: 'bookings#list', :as => 'my_bookings'
 
 
   # The priority is based upon order of creation:
