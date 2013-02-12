@@ -32,7 +32,7 @@ class BookingsController < InheritedResources::Base
       Date.parse(params[:time])
       @wing = Wing.where(:name => params[:wing]).first
       @room = Room.where(:name => params[:room], :wing_id => @wing.id).first
-      @t_begin = Time.parse(params[:time]).beginning_of_day
+      @t_begin = Time.parse(params[:time]).in_time_zone('Kolkata').beginning_of_day
       t_end = @t_begin + 7.days
       @bookings = Booking.find :all, :conditions => ["begin >= ? AND end < ? AND room_id = ? AND approved = 'YES'", @t_begin, t_end, @room.id]
     rescue
