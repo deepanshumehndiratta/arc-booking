@@ -7,19 +7,21 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @wing.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @wing.description %></dd>
+  <dd><%= !@wing.description.blank? ? @wing.description : '-' %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= @wing.image %></dd>
+  <dd><%= image_tag @wing.image, :style => 'max-height:500px;' %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               wings_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+  <% if signed_in? && current_user.superadmin %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_wing_path(@wing), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               wing_path(@wing),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+  <% end %>
 </div>

@@ -7,6 +7,7 @@ class Room < ActiveRecord::Base
   validates :wing_id, :presence => true
 
   validate :booking_room_validity
+  mount_uploader :image, ImageUploader
 
   def booking_room_validity
     if !wing_id || !Wing.exists?(wing_id)

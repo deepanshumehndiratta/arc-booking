@@ -1,4 +1,5 @@
 class Booking < ActiveRecord::Base
+  cattr_accessor :current_user
   attr_accessible :approved, :begin, :end, :projector, :projector_approved, :reason, :room_id, :user_id
   belongs_to :room
 
@@ -29,8 +30,10 @@ class Booking < ActiveRecord::Base
     booking = Booking.find(:all, :conditions => ["((begin >= ? AND end >= ? AND begin <= ?) OR (begin >= ? AND end <= ?) OR (begin <= ? AND end >= ?) OR (begin >= ? AND end >= ?) OR (begin <= ? AND end <= ? AND end >= ?)) AND room_id = ? AND approved = 'YES'", self[:begin], self[:end], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], room_id])
     puts booking.to_s
     if !booking.blank?
-      errors.add(:begin, "The room is already booked between these intervals.")
-      errors.add(:end, "The room is already booked between these intervals.")
+      if !((self.current_user.superadmin && self[:approved] == 'NO') || (self.current_user.projector_admin && self[:projector_approved] == 'NO'))
+        errors.add(:begin, "The room is already booked between these intervals.")
+        errors.add(:end, "The room is already booked between these intervals.")
+      end
     end
   end
 end

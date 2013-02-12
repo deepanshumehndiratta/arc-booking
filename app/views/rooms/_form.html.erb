@@ -1,8 +1,14 @@
 <%= bootstrap_form_for @room, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.text_field :name, :class => 'text_field' %>
-  <%= f.number_field :wing_id, :class => 'number_field' %>
+  <% wings = Wing.all %>
+  <% rtr = [] %>
+  <% wings.each do |wing| %>
+    <% rtr << [  "#{wing.name}", wing.id ] %>
+  <% end %>
+  <%= f.select :wing_id, options_for_select(rtr) %>
   <%= f.text_field :description, :class => 'text_field' %>
-  <%= f.text_field :image, :class => 'text_field' %>
+  <%= image_tag(@room.image_url) if @room.image? %>
+  <%= f.file_field :image %>
   <%= f.actions do %>
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

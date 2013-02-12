@@ -2,6 +2,14 @@
   <%= f.text_field :name, :class => 'text_field' %>
   <%= f.text_field :email, :class => 'text_field' %>
   <%= f.password_field :password, :class => 'text_field' %>
+  <% if signed_in? && current_user.superadmin? %>
+    <%= f.control_group :superadmin do %>
+      <%= f.check_box :superadmin, :class => 'check_box', :label => 'Super Administrator' %>
+    <% end %>
+    <%= f.control_group :projector_admin do %>
+      <%= f.check_box :projector_admin, :class => 'check_box', :label => 'Projector Administrator' %>
+    <% end %>
+  <% end %>
   <%= f.actions do %>
     <%= f.submit "Signup", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

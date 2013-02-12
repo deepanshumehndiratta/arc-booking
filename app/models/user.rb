@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password
+  attr_accessible :email, :name, :password, :superadmin, :projector_admin
   has_secure_password
   has_many :bookings
 

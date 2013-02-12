@@ -3,17 +3,19 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'capistrano'
 gem 'carrierwave'
-gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'mysql2', '~> 0.3.11'
 gem "therubyracer"
 gem "less-rails"
+gem 'activeadmin'
 gem 'twitter-bootstrap-rails'
 gem 'rails3_before_render'
 gem 'bootstrap_form'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+# Devise
+gem "devise"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

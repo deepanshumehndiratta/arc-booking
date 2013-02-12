@@ -2,16 +2,16 @@ ArcBooking::Application.routes.draw do
 
   root :to => 'bookings#index'
 
-  resources :bookings, :except => [:show]
+  resources :bookings, :except => [:show, :edit, :update, :destroy]
 
 
-  resources :users, :only => [:create, :new]
+  resources :users
 
 
-  resources :rooms, :only => [:show, :index]
+  resources :rooms
 
 
-  resources :wings, :only => [:show, :index]
+  resources :wings
 
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -21,6 +21,11 @@ ArcBooking::Application.routes.draw do
 
   match '/bookings/for/:wing/:room/begin/:time', :to => 'bookings#for', :via => [:get], :as => 'custom_booking'
   match '/mybookings',  to: 'bookings#list', :as => 'my_bookings'
+
+  match '/admin',  to: 'bookings#pending', :via => [:get]
+
+  match '/booking/approve/:id',  to: 'bookings#approve', :via => [:post], :as => 'approve_booking'
+  match '/booking/deny/:id',  to: 'bookings#deny', :via => [:post], :as => 'deny_booking'
 
 
   # The priority is based upon order of creation:

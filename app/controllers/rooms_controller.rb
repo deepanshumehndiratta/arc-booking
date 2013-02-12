@@ -1,3 +1,4 @@
 class RoomsController < InheritedResources::Base
-  before_filter :check_auth, :except => [:index, :show]
+  skip_before_filter :check_auth
+  before_filter :check_superadmin, :except => [:index, :show]
 end

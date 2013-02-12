@@ -48,6 +48,9 @@
           <a class="brand" href="#">Room Booking Portal - ARC</a>
           <div class="container nav-collapse">
             <ul class="nav">
+              <% if signed_in? && (current_user.superadmin || current_user.projector_admin) %>
+                <li><%= link_to "Admin Panel", '/admin'  %></li>
+              <% end %>
               <li><%= link_to "Wings", :controller => 'wings'  %></li>
               <li><%= link_to "Rooms", :controller => 'rooms' %></li>
               <li><%= link_to "Bookings", :controller => 'bookings'  %></li>
@@ -79,18 +82,20 @@
 
     <div class="container">
         <div class="row">
-          <div class="span9" style="overflow:auto;">
+          <div class="span9" style="overflow:auto;width:100%;">
             <%= bootstrap_flash %>
             <%= yield %>
           </div>
+          <!--
           <div class="span3">
             <div class="well sidebar-nav">
               <h3>Important Links</h3>
               <ul class="nav nav-list">
                 <li><%= link_to "View Bookings", :controller => 'bookings'  %></li>
               </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
+            </div>
+            <!--/.well -->
+          <!--</div><!--/span-->
         </div><!--/row-->
 
       <footer>

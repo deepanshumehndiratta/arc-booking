@@ -1,0 +1,50 @@
+<%- model_class = Booking -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => (current_user.superadmin ? "Pending Room Bookings" : "Pending Projector Bookings") %></h1>
+</div>
+<%= will_paginate @bookings, :renderer => BootstrapPagination::Rails %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:room_id) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:reason) %></th>
+      <th>Begin Time</th>
+      <th>End Time</th>
+      <% if signed_in? && current_user.superadmin %>
+        <th>Proj. Required</th>
+      <% end %>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| -%>
+      <tr>
+        <td><% room = Room.find(booking.room_id) %><%= Wing.find(room.wing_id).name %>-<%= room.name %></td>
+        <td><%= User.find(booking.user_id).name %></td>
+        <td><%= booking.reason %></td>
+        <td><%= booking.begin.strftime("%H:%M, %B %d, %Y") %></td>
+        <td><%= booking.end.strftime("%H:%M, %B %d, %Y") %></td>
+        <% if signed_in? && current_user.superadmin %>
+          <td><%= booking.projector %></td>
+        <% end %>
+        <td>
+          <%= link_to t('.new', :default => "Approve"),
+              '/booking/approve/' + booking.id.to_s,
+              :method => 'post',
+              :class => 'btn' %>
+          <%= link_to t('.destroy', :default => "Deny"),
+              '/booking/deny/' + booking.id.to_s,
+              :method => 'post',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => "Book a Room"),
+            new_booking_path,
+            :class => 'btn btn-primary' %>

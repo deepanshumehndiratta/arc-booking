@@ -23,7 +23,7 @@
           <% booked = false %>
           <% time = Time.zone.local(Time.now.year,Time.now.month,Time.now.day,i,0) %>
           <% bookings.each do |booking| %>
-            <% if time >= booking.begin and  time < booking.end %>
+            <% if (((time +1.hours) > booking.begin) || (time >= booking.begin)) and  time < booking.end %>
               <% booked = true %>
               <% break %>
             <% end %>
