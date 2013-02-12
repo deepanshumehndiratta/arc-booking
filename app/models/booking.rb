@@ -27,7 +27,7 @@ class Booking < ActiveRecord::Base
     if self[:begin] <= Time.current.to_s
       errors.add(:begin, "Please choose a booking time in the future.")
     end
-    booking = Booking.find(:all, :conditions => ["((begin >= ? AND end >= ? AND begin <= ?) OR (begin >= ? AND end <= ?) OR (begin <= ? AND end >= ?) OR (begin >= ? AND end >= ?) OR (begin <= ? AND end <= ? AND end >= ?)) AND room_id = ? AND approved = 'YES'", self[:begin], self[:end], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], room_id])
+    booking = Booking.find(:all, :conditions => ["((begin >= ? AND end >= ? AND begin <= ?) OR (begin >= ? AND end <= ?) OR (begin <= ? AND end >= ?) OR (begin <= ? AND end <= ? AND end >= ?)) AND room_id = ? AND approved = 'YES'", self[:begin], self[:end], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], room_id])
     puts booking.to_s
     if !booking.blank?
       if !((self.current_user.superadmin && self[:approved] == 'NO') || (self.current_user.projector_admin && self[:projector_approved] == 'NO'))

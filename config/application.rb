@@ -37,8 +37,8 @@ module ArcBooking
         "#{html_tag}".html_safe 
     }
 
-    config.time_zone = 'Kolkata'
-    config.active_record.default_timezone = 'Kolkata'
+    #config.time_zone = 'UTC'
+    #config.active_record.default_timezone = 'UTC'
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
