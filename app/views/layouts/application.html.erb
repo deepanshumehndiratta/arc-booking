@@ -52,6 +52,23 @@
               <li><%= link_to "Rooms", :controller => 'rooms' %></li>
               <li><%= link_to "Bookings", :controller => 'bookings'  %></li>
             </ul>
+            <ul class="nav pull-right">
+              <% if signed_in? %>
+                <li id="fat-menu" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <%= current_user.name %> <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li>
+                      <%= link_to "Sign out", signout_path, method: "delete" %>
+                    </li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><%= link_to "Sign in", signin_path %></li>
+              <% end %>
+            </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>

@@ -10,6 +10,8 @@ gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
 gem 'rails3_before_render'
+gem 'bootstrap_form'
+gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

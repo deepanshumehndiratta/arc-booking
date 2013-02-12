@@ -16,26 +16,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/models/room.rb",
+			"file": "app/controllers/bookings_controller.rb",
 			"settings":
 			{
-				"buffer_size": 408,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/wing.rb",
-			"settings":
-			{
-				"buffer_size": 138,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/user.rb",
-			"settings":
-			{
-				"buffer_size": 497,
+				"buffer_size": 1183,
 				"line_ending": "Unix"
 			}
 		},
@@ -43,31 +27,7 @@
 			"file": "app/models/booking.rb",
 			"settings":
 			{
-				"buffer_size": 1058,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/bookings/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 1511,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/bookings/for.html.erb",
-			"settings":
-			{
-				"buffer_size": 2768,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/bookings_controller.rb",
-			"settings":
-			{
-				"buffer_size": 886,
+				"buffer_size": 1767,
 				"line_ending": "Unix"
 			}
 		},
@@ -75,15 +35,63 @@
 			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 1993,
+				"buffer_size": 2280,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/layouts/application.html.erb",
+			"file": "app/controllers/application_controller.rb",
 			"settings":
 			{
-				"buffer_size": 3753,
+				"buffer_size": 302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/users_controller.rb",
+			"settings":
+			{
+				"buffer_size": 324,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/sessions_controller.rb",
+			"settings":
+			{
+				"buffer_size": 522,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/user.rb",
+			"settings":
+			{
+				"buffer_size": 708,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/helpers/sessions_helper.rb",
+			"settings":
+			{
+				"buffer_size": 435,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/rooms_controller.rb",
+			"settings":
+			{
+				"buffer_size": 109,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/wings_controller.rb",
+			"settings":
+			{
+				"buffer_size": 109,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,15 +99,7 @@
 			"file": "app/views/bookings/_form.html.erb",
 			"settings":
 			{
-				"buffer_size": 1335,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/bookings/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 285,
+				"buffer_size": 922,
 				"line_ending": "Unix"
 			}
 		}
@@ -128,20 +128,32 @@
 	},
 	"file_history":
 	[
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/bookings/index.html.erb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/layouts/application.html.erb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/db/migrate/20130211194436_add_remember_token_to_users.rb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/Gemfile",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/sessions/new.html.erb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/users/new.html.erb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/users/_form.html.erb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/wings/_form.html.erb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/bookings/_form.html.erb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/rooms/_form.html.erb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/config/initializers/formtastic.rb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/config/application.rb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/assets/stylesheets/application.css",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/models/room.rb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/models/wing.rb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/models/user.rb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/models/booking.rb",
+		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/bookings/for.html.erb",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/bookings/new.html.erb",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/bookings/index.html.erb.bak",
 		"/works/deepanshu/Desktop/Dev/arc-booking/config/environments/development.rb",
 		"/works/deepanshu/Desktop/Dev/arc-booking/config/environments/production.rb",
-		"/works/deepanshu/Desktop/Dev/arc-booking/config/application.rb",
-		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/layouts/application.html.erb",
-		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/bookings/_form.html.erb",
-		"/works/deepanshu/Desktop/Dev/arc-booking/Gemfile",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/helpers/application_helper.rb",
-		"/works/deepanshu/Desktop/Dev/arc-booking/app/assets/stylesheets/application.css",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/assets/stylesheets/bootstrap_and_overrides.css.less",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/views/shared/_flash_messages.html",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/helpers/bookings_helper.rb",
-		"/works/deepanshu/Desktop/Dev/arc-booking/app/models/booking.rb",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/controllers/bookings_controller.rb",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/controllers/rooms_controller.rb",
 		"/works/deepanshu/Desktop/Dev/arc-booking/app/controllers/wings_controller.rb",
@@ -216,9 +228,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -226,6 +239,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"form_for",
 			"0",
 			"	",
 			"wrapper",
@@ -240,6 +254,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"bootstrap_form_for",
 			"  ",
 			""
 		],
@@ -252,23 +267,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/models/room.rb",
+					"file": "app/controllers/bookings_controller.rb",
 					"settings":
 					{
-						"buffer_size": 408,
+						"buffer_size": 1183,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								205,
-								205
+								308,
+								308
 							]
 						],
 						"settings":
@@ -285,25 +300,27 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/models/wing.rb",
+					"file": "app/models/booking.rb",
 					"settings":
 					{
-						"buffer_size": 138,
+						"buffer_size": 1767,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								133,
-								133
+								1534,
+								1534
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
+						"translation.x": 54.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -311,44 +328,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/models/user.rb",
+					"file": "config/routes.rb",
 					"settings":
 					{
-						"buffer_size": 497,
+						"buffer_size": 2280,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								370,
-								370
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/models/booking.rb",
-					"settings":
-					{
-						"buffer_size": 1058,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								893,
-								893
+								79,
+								79
 							]
 						],
 						"settings":
@@ -364,54 +355,76 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/views/bookings/index.html.erb",
+					"buffer": 3,
+					"file": "app/controllers/application_controller.rb",
 					"settings":
 					{
-						"buffer_size": 1511,
+						"buffer_size": 302,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								312,
-								312
+								100,
+								100
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 102.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/controllers/users_controller.rb",
+					"settings":
+					{
+						"buffer_size": 324,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/views/bookings/for.html.erb",
+					"file": "app/controllers/sessions_controller.rb",
 					"settings":
 					{
-						"buffer_size": 2768,
+						"buffer_size": 522,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								824,
-								824
+								82,
+								82
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -421,10 +434,10 @@
 				},
 				{
 					"buffer": 6,
-					"file": "app/controllers/bookings_controller.rb",
+					"file": "app/models/user.rb",
 					"settings":
 					{
-						"buffer_size": 886,
+						"buffer_size": 708,
 						"regions":
 						{
 						},
@@ -447,25 +460,23 @@
 				},
 				{
 					"buffer": 7,
-					"file": "config/routes.rb",
+					"file": "app/helpers/sessions_helper.rb",
 					"settings":
 					{
-						"buffer_size": 1993,
+						"buffer_size": 435,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								236,
-								236
+								224,
+								224
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -475,25 +486,23 @@
 				},
 				{
 					"buffer": 8,
-					"file": "app/views/layouts/application.html.erb",
+					"file": "app/controllers/rooms_controller.rb",
 					"settings":
 					{
-						"buffer_size": 3753,
+						"buffer_size": 109,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								586,
-								586
+								104,
+								104
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -503,25 +512,23 @@
 				},
 				{
 					"buffer": 9,
-					"file": "app/views/bookings/_form.html.erb",
+					"file": "app/controllers/wings_controller.rb",
 					"settings":
 					{
-						"buffer_size": 1335,
+						"buffer_size": 109,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								73,
-								73
+								104,
+								104
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -531,23 +538,25 @@
 				},
 				{
 					"buffer": 10,
-					"file": "app/views/bookings/new.html.erb",
+					"file": "app/views/bookings/_form.html.erb",
 					"settings":
 					{
-						"buffer_size": 285,
+						"buffer_size": 922,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								281,
-								281
+								195,
+								195
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

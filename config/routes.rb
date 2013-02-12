@@ -1,14 +1,14 @@
 ArcBooking::Application.routes.draw do
-  resources :bookings
+  resources :bookings, :except => [:show]
 
 
-  resources :users
+  resources :users, :only => [:create, :new]
 
 
-  resources :rooms
+  resources :rooms, :only => [:show, :index]
 
 
-  resources :wings
+  resources :wings, :only => [:show, :index]
 
   resources :sessions, only: [:new, :create, :destroy]
 
