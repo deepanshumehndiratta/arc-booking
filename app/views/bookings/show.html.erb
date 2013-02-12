@@ -1,0 +1,35 @@
+<%- model_class = Booking -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:room_id) %>:</strong></dt>
+  <dd><%= @booking.room_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @booking.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reason) %>:</strong></dt>
+  <dd><%= @booking.reason %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:begin) %>:</strong></dt>
+  <dd><%= @booking.begin %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end) %>:</strong></dt>
+  <dd><%= @booking.end %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:projector) %>:</strong></dt>
+  <dd><%= @booking.projector %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:approved) %>:</strong></dt>
+  <dd><%= @booking.approved %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:projector_approved) %>:</strong></dt>
+  <dd><%= @booking.projector_approved %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              bookings_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_booking_path(@booking), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              booking_path(@booking),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

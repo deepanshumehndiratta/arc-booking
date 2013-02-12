@@ -1,0 +1,10 @@
+<%= bootstrap_form_for @wing, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.text_field :name, :class => 'text_field' %>
+  <%= f.text_field :description, :class => 'text_field' %>
+  <%= f.text_field :image, :class => 'text_field' %>
+  <%= f.actions do %>
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                wings_path, :class => 'btn' %>
+  <% end %>
+<% end %>

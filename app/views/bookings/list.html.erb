@@ -1,0 +1,37 @@
+<%- model_class = Booking -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => "My Bookings" %></h1>
+</div>
+<%= will_paginate @bookings, :renderer => BootstrapPagination::Rails %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:room_id) %></th>
+      <th><%= model_class.human_attribute_name(:reason) %></th>
+      <th>Begin Time</th>
+      <th>End Time</th>
+      <th>Proj. Required</th>
+      <th>Proj. Approved</th>
+      <th><%= model_class.human_attribute_name(:approved) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| -%>
+      <% color =  (booking.approved == 'PENDING') ? ('#FFDB75') : (booking.approved == 'YES' ? '#32B40D' : '#D64937') %>
+      <tr>
+        <td><% room = Room.find(booking.room_id) %><%= Wing.find(room.wing_id).name %>-<%= room.name %></td>
+        <td style='background-color:<%= color %>;'><%= booking.reason %></td>
+        <td style='background-color:<%= color %>;'><%= booking.begin.strftime("%H:%M, %B %d, %Y") %></td>
+        <td style='background-color:<%= color %>;'><%= booking.end.strftime("%H:%M, %B %d, %Y") %></td>
+        <td style='background-color:<%= color %>;'><%= booking.projector ? 'Yes' : 'No' %></td>
+        <td style='background-color:<%= color %>;'><%= booking.projector ? (booking.approved == 'YES' ? 'YES' : booking.projector_approved) : '--' %></td>
+        <td style='background-color:<%= color %>;'><%= booking.approved %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => "Book a Room"),
+            new_booking_path,
+            :class => 'btn btn-primary' %>

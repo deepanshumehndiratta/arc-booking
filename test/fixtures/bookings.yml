@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  room_id: 1
+  user_id: 1
+  reason: MyText
+  begin: 2013-02-11 01:34:53
+  end: 2013-02-11 01:34:53
+  projector: false
+  approved: MyString
+  projector_approved: MyString
+
+two:
+  room_id: 1
+  user_id: 1
+  reason: MyText
+  begin: 2013-02-11 01:34:53
+  end: 2013-02-11 01:34:53
+  projector: false
+  approved: MyString
+  projector_approved: MyString

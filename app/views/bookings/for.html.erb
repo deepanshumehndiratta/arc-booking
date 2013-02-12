@@ -1,0 +1,80 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "/js/bootstrap-datepicker.js" %>
+  <script type="text/javascript">
+    $('#dp3').datepicker()
+      .on('changeDate', function(ev){
+        var url = window.location.href.split('/');
+        url[url.length-1] = $('#new-date').val();
+        window.location.href = url.join('/');
+    });
+  </script>
+<% end %>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag '/css/datepicker', :media => 'screen' %>
+<% end %>
+<%- model_class = Booking -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => 'Bookings for Room ' + params[:wing] + '-' + params[:room] %></h1>
+</div>
+<div class="input-append date" id="dp3" data-date-format="yyyy-mm-dd" data-date="<%= params[:time] %>">
+  <label class='control-label' for='new-date'>See Bookings for Room <%= params[:wing] %>-<%= params[:room] %> for 1 week begining on: </label>
+  <input id='new-date' class="span2" size="16" type="text" value="<%= params[:time] %>">
+  <span class="add-on"><i class="icon-th"></i></span>
+</div>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td>Time/<br>Day</td>
+      <% (1..24).each do |i| %>
+        <td><%= i %>:00</td>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% (0..6).each do |i| %>
+      <tr>
+        <td><%= (@t_begin + i.days).strftime("%A") %></td>
+        <% (0..23).each do |j| %>
+          <% booked = false %>
+          <% time = @t_begin + j.hours + i.days %>
+          <% @bookings.each do |booking| %>
+            <% if time >= booking.begin and  time < booking.end %>
+              <% booked = true %>
+              <% break %>
+            <% end %>
+          <% end %>
+          <td style="background:<%= booked ? '#D64937' : '#32B40D' %>;"></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:reason) %></th>
+      <th><%= model_class.human_attribute_name(:begin) %></th>
+      <th><%= model_class.human_attribute_name(:end) %></th>
+      <th><%= model_class.human_attribute_name(:projector) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= User.find(booking.user_id).name %></td>
+        <td><%= booking.reason %></td>
+        <td><%= booking.begin.strftime("%H:%M, %B %d, %Y") %></td>
+        <td><%= booking.end.strftime("%H:%M, %B %d, %Y") %></td>
+        <td><%= booking.projector ? 'Yes' : 'No' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => "Book " + params[:wing] + '-' + params[:room]),
+            new_booking_path,
+            :class => 'btn btn-primary' %>

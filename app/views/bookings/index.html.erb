@@ -1,0 +1,40 @@
+<%- model_class = Booking -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<br><br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td>Time/<br>Room</td>
+      <% (1..24).each do |i| %>
+        <td><%= i %>:00</td>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rooms = Room.find(:all) %>
+    <% @rooms.each do |room| %>
+      <tr>
+        <% wing = Wing.where(:id => room.wing_id).first%>
+        <td><%= link_to wing.name + '-' + room.name, '/bookings/for/' + wing.name + '/' + room.name + '/begin/' + Date.current.to_s %></td>
+        <% bookings = Booking.find :all, :conditions => ["begin >= ? AND end < ? AND room_id = ? AND approved = 'YES'", Time.zone.local(Time.now.year,Time.now.month,Time.now.day,0,0), Time.zone.local(Time.now.year,Time.now.month,Time.now.day+1,0,0), room.id] %>
+        <% (0..23).each do |i| %>
+          <% booked = false %>
+          <% time = Time.zone.local(Time.now.year,Time.now.month,Time.now.day,i,0) %>
+          <% bookings.each do |booking| %>
+            <% if time >= booking.begin and  time < booking.end %>
+              <% booked = true %>
+              <% break %>
+            <% end %>
+          <% end %>
+          <td style="background:<%= booked ? '#D64937' : '#32B40D' %>;"></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => "Book a Room"),
+            new_booking_path,
+            :class => 'btn btn-primary' %>

@@ -1,0 +1,21 @@
+<% rtr = [] %>
+<% rooms = Room.all %>
+<% rooms.each do |room| %>
+  <% wing = Wing.find(room.wing_id) %>
+  <% rtr << [  "#{wing.name}-#{room.name}", room.id ] %>
+<% end %>
+<%= bootstrap_form_for @booking, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.select :room_id, options_for_select(rtr) %>
+  <%= f.text_area :reason, :class => 'text_area', :style => 'max-height:100px;' %>
+  <%= f.datetime_select :begin, :class => 'datetime_select', :label => 'Begin Time' %>
+  <%= f.datetime_select :end, :class => 'datetime_select', :label => 'End Time' %>
+  <%= f.control_group :projector do %>
+      <%= f.check_box :projector, :class => 'check_box', :label => 'Projector Required' %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.submit "Book", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                bookings_path, :class => 'btn' %>
+  <% end %>
+<% end %>
