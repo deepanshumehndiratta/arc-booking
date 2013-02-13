@@ -24,7 +24,7 @@ class Booking < ActiveRecord::Base
     if self[:begin] >= self[:end]
       errors.add(:end, "The Ending Time should be past the Beginning Time.")
     end
-    if self[:begin] <= Time.in_time_zone('Kolkata').current.to_s
+    if self[:begin] <= Time.now.in_time_zone('Kolkata').to_s
       errors.add(:begin, "Please choose a booking time in the future.")
     end
     booking = Booking.find(:all, :conditions => ["((begin >= ? AND end >= ? AND begin <= ?) OR (begin >= ? AND end <= ?) OR (begin <= ? AND end >= ?) OR (begin <= ? AND end <= ? AND end >= ?)) AND room_id = ? AND approved = 'YES'", self[:begin], self[:end], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], self[:end], self[:begin], room_id])
